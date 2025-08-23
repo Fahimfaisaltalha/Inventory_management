@@ -1,0 +1,30 @@
+- Fronted -Blade Templating Done
+- Database Design
+    - Migrations - Migrations Done
+    - Model - Models Done
+- Backend Prepare (Category CRUD, Product CRUD, Customer CRUD, Invoice CRUD, Report PDF, Dashboard Summary, User Profile Update)
+
+- Fronted Connect ( API Call by Ajax )
+
+
+Module 24 Class 3
+
+- User Profile Update - Done
+- Invoice
+   - Read Invoice - Done
+   - Invoice Details - Done
+   - Invoice Delete - Done
+- Dashboad Summary  - Done
+- PDF Report Generation  (https://github.com/barryvdh/laravel-dompdf) - Done
+
+
+Module - 25 Fronted 
+- User Profile Update - Done
+- Invoice - Done
+   - Read Invoice - Done
+   - Invoice Details - Done
+   - Invoice Delete - Done
+- Dashboad Summary - Done
+- PDF Report Generation  - Done
+
+

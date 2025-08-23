@@ -1,0 +1,207 @@
+Project: Designing Database of Inventory Management Project
+
+
+[এই প্রজেক্টটি করার জন্য এবং জমা দেওয়ার আগে অবশ্যই মডিউল ১৭  এর প্রজেক্টের লাইভ ক্লাসটি দেখুন।]
+
+Create the following tables using Laravel Migrations:
+1. users
+2. customers
+3. categories
+4. products
+5. invoices
+6. invoice_products
+
+
+1. User Table
+
+Create a migration for the users table with the following attributes:
+
+
+id: Primary key (auto-incrementing)
+
+first_name: String, max length 50
+
+last_name: String, max length 50
+
+email: String, max length 50, unique
+
+mobile: String, max length 20, nullable
+
+email_verified_at: Timestamp, nullable
+
+password: String (for storing hashed password)
+
+otp: String, max length 10
+
+remember_token: String, nullable (for remember me functionality)
+
+timestamps: Created_at and updated_at timestamps
+
+
+Relationships:
+There are no direct relationships in the users table, but it will be related to other tables like categories, products, and invoices.
+
+
+2. Customers Table
+
+Create a migration for the customers table with the following attributes:
+
+
+id: Primary key (auto-incrementing)
+
+name: String, max length 50
+
+email: String, max length 50
+
+mobile: String, max length 50
+
+user_id: Foreign key, references id in the users table
+
+timestamps: Created_at and updated_at timestamps
+
+
+Relationships:
+
+A customer belongs to a user (store owner/admin).
+
+3. Categories Table
+
+Create a migration for the categories table with the following attributes:
+
+
+id: Primary key (auto-incrementing)
+
+name: String, max length 50
+
+user_id: Foreign key, references id in the users table
+
+timestamps: Created_at and updated_at timestamps
+
+
+Relationships:
+
+A category belongs to a user (store owner/admin).
+
+4. Products Table
+
+Create a migration for the products table with the following attributes:
+
+
+id: Primary key (auto-incrementing)
+
+user_id: Foreign key, references id in the users table
+
+category_id: Foreign key, references id in the categories table
+
+name: String, max length 100
+
+price: Decimal, with a precision of 8 and scale of 2 (8, 2).
+
+unit: String, max length 50
+
+img_url: String, max length 100
+
+timestamps: Created_at and updated_at timestamps
+
+
+Relationships:
+
+A product belongs to a category and a user.
+
+
+5. Invoices Table
+Create a migration for the invoices table with the following attributes:
+
+
+id: Primary key (auto-incrementing)
+
+total: String, max length 50
+
+discount: String, max length 50
+
+vat: String, max length 50
+
+payable: String, max length 50
+
+user_id: Foreign key, references id in the users table
+
+customer_id: Foreign key, references id in the customers table
+
+timestamps: Created_at and updated_at timestamps
+
+
+Relationships:
+
+An invoice belongs to a user and a customer.
+
+6. Invoice_Products Table
+
+Create a migration for the invoice_products table with the following attributes:
+
+
+id: Primary key (auto-incrementing)
+
+invoice_id: Foreign key, references id in the invoices table
+
+product_id: Foreign key, references id in the products table
+
+user_id: Foreign key, references id in the users table
+
+qty: String, max length 50
+
+sale_price: Decimal, with a precision of 8 and scale of 2 (8, 2).
+
+timestamps: Created_at and updated_at timestamps
+
+
+Relationships:
+
+An invoice product belongs to an invoice, a product, and a user.
+
+
+### জমাদানের নির্দেশাবলী:
+১. একটি নতুন GitHub রিপোজিটরি তৈরি করুন এবং Project ফাইলগুলো রিপোজিটরিতে অন্তর্ভুক্ত করুন।
+২. শুধুমাত্র GitHub রিপোজিটরি লিঙ্ক জমা দিতে হবে।
+৩. ডেডলাইনের পরে আপনার কোডে কোনো পরিবর্তন করা যাবে না।
+৪. অ্যাসাইনমেন্ট পেজের Upload File সেকশনে কোনো ফাইল আপলোড করার প্রয়োজন নেই।
+
+
+
+// Required Commands for migrations
+php artisan make:migration create_users_table
+
+
+php artisan make:migration create_customers_table
+
+
+php artisan make:migration create_categories_table
+
+
+php artisan make:migration create_products_table
+
+
+php artisan make:migration create_invoices_table
+
+
+php artisan make:migration create_invoice_products_table
+
+
+
+=======================================================================
+We will do this in later modules
+=======================================================================
+// Required Commands for model
+php artisan make:model User
+php artisan make:model Customer
+php artisan make:model Category
+php artisan make:model Product
+php artisan make:model Invoice
+php artisan make:model InvoiceProduct
+
+
+
+
+
+
+
+
